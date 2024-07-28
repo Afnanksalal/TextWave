@@ -24,7 +24,7 @@ Now, let's get TextWave up and running:
 Open your terminal or command prompt and execute the following command to download the TextWave source code:
 
 ```bash
-git clone https://github.com/Afnanksalal/](https://github.com/Afnanksalal/TextWave.git
+git clone https://github.com/Afnanksalal/TextWave.git
 ```
 
 #### 2. Set Up the Backend (Flask)
