@@ -24,7 +24,7 @@ Now, let's get TextWave up and running:
 Open your terminal or command prompt and execute the following command to download the TextWave source code:
 
 ```bash
-git clone https://github.com/your-username/](https://github.com/Afnanksalal/TextWave.git
+git clone https://github.com/Afnanksalal/](https://github.com/Afnanksalal/TextWave.git
 ```
 
 #### 2. Set Up the Backend (Flask)
@@ -50,6 +50,11 @@ cd textwave/backend
    pip install -r requirements.txt
    ```
 
+   **Important:** During the installation, if you encounter any errors related to `unidic`, install it separately using:
+
+   ```bash
+   python -m unidic download
+   ``` 
 * **Download OpenVoice Checkpoint:**  
    - Download the checkpoint file from: [https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip](https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip)
    - Extract the contents and place the `checkpoint` directory in the root of your `backend` folder.
@@ -107,3 +112,10 @@ cd ../frontend
    ```
 
    Your Django development server will typically run on `http://127.0.0.1:8000/`.
+
+**Installing FFmpeg:**
+
+- **Instructions Vary:** The best way to install FFmpeg depends on your operating system (Windows, macOS, or Linux).
+- **Official Website:** I recommend referring to the official FFmpeg download page for the most up-to-date instructions: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
+
+Once you have FFmpeg installed, your system should be able to work with the audio processing tasks within TextWave. 
