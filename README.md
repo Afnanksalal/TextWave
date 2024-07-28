@@ -57,7 +57,7 @@ cd textwave/backend
 * **Launch the Backend:**
 
    ```bash
-   flask run 
+   python app.py
    ```
 
    By default, your Flask app will usually start on `http://127.0.0.1:5000/`. Note this URL, as you'll need it for the frontend.
