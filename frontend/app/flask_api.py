@@ -1,6 +1,6 @@
 import requests
 
-FLASK_API_BASE_URL = 'https://5000-01j383z9m7bsc8g89ytt38vrnf.cloudspaces.litng.ai/'
+FLASK_API_BASE_URL = 'http://your_backend_url'
 
 
 def process_text(text_input,
