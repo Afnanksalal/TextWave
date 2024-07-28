@@ -1,0 +1,10 @@
+Flask==2.2.5
+librosa==0.10.1
+numpy==1.24.4
+redis==4.6.0
+soundfile==0.12.1
+torch==2.0.1
+transformers==4.32.1
+python-dotenv>=1.0.1
+melotts @ git+https://github.com/myshell-ai/MeloTTS.git@abf885acf7c8322af07e6584099748cba09e3909
+MyShell-OpenVoice @ git+https://github.com/myshell-ai/OpenVoice.git@34874b77e8ed4fd63ebafcfefafbe31002748486 
