@@ -16,7 +16,8 @@ Before you use TextWave, ensure you have the following prerequisites:
 * **Python 3.8+:** The programming language powering TextWave. [https://www.python.org/](https://www.python.org/)
 * **Redis:** An in-memory data store used for rate limiting. [https://redis.io/](https://redis.io/)
 * **MySQL:** A relational database for storing project-related data. [https://www.mysql.com/](https://www.mysql.com/)
-
+* **FFmpeg:**  A powerful, open-source multimedia framework used to record, convert, and stream audio and video files. [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
+  
 Now, let's get TextWave up and running:
 
 #### 1. Clone the Repository
@@ -112,9 +113,3 @@ cd ../frontend
 
    Your Django development server will typically run on `http://127.0.0.1:8000/`.
 
-**Installing FFmpeg:**
-
-- **Instructions Vary:** The best way to install FFmpeg depends on your operating system (Windows, macOS, or Linux).
-- **Official Website:** I recommend referring to the official FFmpeg download page for the most up-to-date instructions: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
-
-Once you have FFmpeg installed, your system should be able to work with the audio processing tasks within TextWave. 
