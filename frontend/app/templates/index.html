@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TextWave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ECF0F1;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: {% if user.is_authenticated %} #2C3E50 {% else %} #1A252F {% endif %};
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px; /* Reduced padding for mobile */
+            background-color: #1A252F;
+            color: #ECF0F1;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em; /* Responsive font size */
+            color: #E91E63;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px; /* Reduced gap for mobile */
+        }
+
+        nav a {
+            color: #ECF0F1;
+            text-decoration: none;
+            padding: 8px 12px; /* Reduced padding for mobile */
+            background-color: #34495E;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1em; /* Responsive font size */
+        }
+
+        nav a:hover {
+            background-color: #E91E63;
+        }
+
+        .hero-section {
+            background-color: #1A252F;
+            color: #ECF0F1;
+            text-align: center;
+            padding: 40px 20px; /* Adjusted padding for mobile */
+        }
+
+        .hero-section h2 {
+            margin: 0;
+            font-size: 2.5em; /* Responsive font size */
+        }
+
+        .hero-section p {
+            font-size: 1.2em; /* Responsive font size */
+            margin: 15px auto; /* Reduced margin for mobile */
+            max-width: 90%; /* Adjusted max-width for mobile */
+            line-height: 1.4;
+        }
+
+        .hero-section .cta-button {
+            padding: 10px 16px; /* Reduced padding for mobile */
+            background-color: #E91E63;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em; /* Responsive font size */
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 15px; /* Reduced margin for mobile */
+            display: inline-block;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px; /* Reduced padding for mobile */
+            background-color: inherit;
+            color: #ECF0F1;
+        }
+
+        .form-container {
+            max-width: 100%; /* Full width on mobile */
+            padding: 30px; /* Reduced padding for mobile */
+            background-color: #1A252F;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin: 8px 0 5px; /* Reduced margin for mobile */
+            font-weight: bold;
+            color: #ECF0F1;
+            font-size: 1em; /* Responsive font size */
+        }
+
+        textarea,
+        select,
+        .custom-range-container {
+            width: calc(100% - 22px);
+            padding: 8px; /* Reduced padding for mobile */
+            margin: 5px 0 15px; /* Reduced margin for mobile */
+            border: 1px solid #34495E;
+            border-radius: 5px;
+            background-color: #34495E;
+            color: #ECF0F1;
+            font-size: 1em; /* Responsive font size */
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #E91E63;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em; /* Responsive font size */
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: #C2185B;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            border: 2px solid #E91E63;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .file-input-label {
+            background-color: #34495E;
+            padding: 8px; /* Reduced padding for mobile */
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            color: #ECF0F1;
+            font-size: 1em; /* Responsive font size */
+        }
+
+        /* Custom Range Slider Styles */
+        .custom-range-container {
+            position: relative;
+            background-color: transparent;
+            margin: 10px 0 15px; /* Adjusted margin for mobile */
+        }
+
+        .custom-range-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 2px;
+            background-color: #34495E;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .custom-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px; /* Reduced size for mobile */
+            height: 16px; /* Reduced size for mobile */
+            border-radius: 50%;
+            background: #E91E63;
+            cursor: pointer;
+        }
+
+        .custom-range-slider::-moz-range-thumb {
+            width: 16px; /* Reduced size for mobile */
+            height: 16px; /* Reduced size for mobile */
+            border-radius: 50%;
+            background: #E91E63;
+            cursor: pointer;
+        }
+
+        .range-label {
+            display: flex;
+            justify-content: space-between;
+            margin: -5px 0 5px; /* Adjusted margin for mobile */
+            font-weight: bold;
+            font-size: 1em; /* Responsive font size */
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px; /* Reduced padding for mobile */
+            background-color: #1A252F;
+            color: #ECF0F1;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 30px 15px; /* Further reduced padding */
+            }
+            .form-container {
+                padding: 20px; /* Further reduced padding */
+            }
+        }
+    </style>
+    <script>
+        function toggleAccentField() {
+            var language = document.getElementById("language").value;
+            var accentField = document.getElementById("accentField");
+            if (language === "EN") {
+                accentField.style.display = "block";
+            } else {
+                accentField.style.display = "none";
+            }
+        }
+
+        function updateRangeValue(id, value) {
+            document.getElementById(id + 'Value').textContent = value;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>TextWave</h1>
+        <nav>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Signup</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% if not user.is_authenticated %}
+    <section class="hero-section">
+        <h2>Welcome to <span style="color: #E91E63;">TextWave</span></h2>
+        <p>TextWave is a powerful and versatile tool for all your voice synthesis needs. With support for multiple languages, accents, and customizable settings, you can create high-quality, natural-sounding voices for a wide range of applications. Whether you're developing interactive games, enhancing accessibility, or exploring new creative avenues, TextWave empowers you to bring your ideas to life with the power of voice.</p>
+    </section>
+    {% endif %}
+    <main>
+        {% if user.is_authenticated %}
+        <div class="form-container">
+            <form action="{% url 'process_request_view' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="text_input">Text Input:</label>
+                <textarea id="text_input" name="text_input" rows="4" required></textarea>
+                <label for="language">Language:</label>
+                <select id="language" name="language" onchange="toggleAccentField()">
+                    <option value="EN">English</option>
+                    <option value="ES">Spanish</option>
+                    <option value="FR">French</option>
+                    <option value="ZH">Chinese</option>
+                    <option value="JP">Japanese</option>
+                </select>
+                <div id="accentField" style="display: none;">
+                    <label for="accent">Accent:</label>
+                    <select id="accent" name="accent">
+                        <option value="EN-Default">Default</option>
+                        <option value="EN-US">US</option>
+                        <option value="EN-BR">British</option>
+                        <option value="EN-AU">Australian</option>
+                        <option value="EN_INDIA">Indian</option>
+                    </select>
+                </div>
+                
+                <div class="range-label">
+                    <span>Speed: <span id="speedValue">1.0</span></span>
+                </div>
+                <div class="custom-range-container"> 
+                    <input type="range" class="custom-range-slider" id="speed" name="speed" min="0.5" max="2.0" step="0.1" value="1.0" oninput="updateRangeValue('speed', this.value)">
+                </div>
+
+                <div class="range-label">
+                    <span>Pitch: <span id="pitchValue">0</span></span>
+                </div>
+                <div class="custom-range-container">
+                    <input type="range" class="custom-range-slider" id="pitch" name="pitch" min="-12" max="12" step="1" value="0" oninput="updateRangeValue('pitch', this.value)">
+                </div>
+
+                <div class="range-label">
+                    <span>Volume Boost: <span id="volumeValue">100</span></span>
+                </div>
+                <div class="custom-range-container">
+                    <input type="range" class="custom-range-slider" id="volume" name="volume" min="0" max="100" step="1" value="100" oninput="updateRangeValue('volume', this.value)">
+                </div>
+
+                <label for="reference_audio">Reference Audio:</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="reference_audio" name="reference_audio">
+                    <span class="file-input-label">Choose File</span>
+                </div>
+                <div class="submit-container">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2024 TextWave</p>
+    </footer>
+    <script>
+        window.onload = function () {
+            toggleAccentField();
+            updateRangeValue('speed', document.getElementById('speed').value);
+            updateRangeValue('pitch', document.getElementById('pitch').value);
+            updateRangeValue('volume', document.getElementById('volume').value);
+        };
+    </script>
+</body>
+</html>

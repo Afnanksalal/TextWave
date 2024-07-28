@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - TextWave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 60px);
+            padding: 20px; 
+            margin: 20px;
+        }
+
+        .login-form {
+            background-color: #1A252F;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%; 
+            max-width: 300px; 
+        }
+
+        input[type="text"], 
+        input[type="password"] {
+            width: 100%; /* Inputs should take full width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #34495E;
+            border-radius: 5px;
+            background-color: #34495E;
+            color: #ECF0F1;
+            box-sizing: border-box; 
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #E91E63;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            width: 48%; /* Adjusted width for buttons */
+            margin-bottom: 10px; 
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #C2185B;
+        }
+
+        .error-message {
+            color: #E74C3C;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #34495E;
+            color: #ECF0F1;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button::before {
+            content: '\2190';
+            margin-right: 5px;
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 480px) {
+            .login-form {
+                padding: 30px; 
+            }
+
+            .button {
+                width: 100%; /* Buttons stack on small screens */
+                margin-bottom: 5px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'index' %}" class="back-button">Back to Home</a>
+
+    <div class="container">
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <h2>Login</h2>
+
+            {% if form.errors %}
+                <div class="error-message">
+                    <p>Invalid username or password. Please try again.</p>
+                </div>
+            {% endif %}
+
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            <div class="button-container">
+                <button type="submit" class="button">Login</button>
+                <a href="{% url 'signup' %}" class="button">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
