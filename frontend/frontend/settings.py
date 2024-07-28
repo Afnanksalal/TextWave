@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'app',
     'corsheaders',
     'rest_framework',
-    'pwa', 
 ]
 
 MIDDLEWARE = [
