@@ -1,5 +1,5 @@
 ## 🌊 TextWave
-![Image Placeholder](https://via.placeholder.com/800x200.png?text=TextWave+Banner)
+![Image Placeholder](textwave.png)
 TextWave is your one-stop solution for transforming text into natural-sounding speech. With its support for diverse languages, accents, and customizable settings, you can unlock a world of possibilities. From crafting immersive games and enhancing accessibility to exploring new frontiers in creative expression, TextWave empowers you to bring your ideas to life through the magic of voice.
 
 ### ✨ Key Features
