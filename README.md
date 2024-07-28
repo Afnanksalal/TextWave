@@ -1,6 +1,6 @@
 ## 🌊 TextWave
-
-TextWave is your one-stop solution for transforming text into natural-sounding speech. With its support for diverse languages, accents, and customizable settings, you can unlock a world of possibilities.  From crafting immersive games and enhancing accessibility to exploring new frontiers in creative expression, TextWave empowers you to bring your ideas to life through the magic of voice.
+![Image Placeholder](https://via.placeholder.com/800x200.png?text=TextWave+Banner)
+TextWave is your one-stop solution for transforming text into natural-sounding speech. With its support for diverse languages, accents, and customizable settings, you can unlock a world of possibilities. From crafting immersive games and enhancing accessibility to exploring new frontiers in creative expression, TextWave empowers you to bring your ideas to life through the magic of voice.
 
 ### ✨ Key Features
 
@@ -12,10 +12,10 @@ TextWave is your one-stop solution for transforming text into natural-sounding s
 
 Before you use TextWave, ensure you have the following prerequisites:
 
-* **Git:**  For cloning the TextWave repository.  [https://git-scm.com/](https://git-scm.com/)
+* **Git:** For cloning the TextWave repository. [https://git-scm.com/](https://git-scm.com/)
 * **Python 3.8+:** The programming language powering TextWave. [https://www.python.org/](https://www.python.org/)
 * **Redis:** An in-memory data store used for rate limiting. [https://redis.io/](https://redis.io/)
-* **MySQL:**  A relational database for storing project-related data. [https://www.mysql.com/](https://www.mysql.com/)
+* **MySQL:** A relational database for storing project-related data. [https://www.mysql.com/](https://www.mysql.com/)
 
 Now, let's get TextWave up and running:
 
@@ -75,6 +75,10 @@ Change directories to the frontend:
 cd ../frontend 
 ```
 
+* **Install Required Packages:**
+   ```bash
+   pip install django django-cors-headers mysqlclient 
+   ```
 * **Database Settings:** Open the `settings.py` file.  Within the `DATABASES` dictionary, update the settings for the 'default' connection to match your MySQL credentials:
 
    ```python
@@ -92,11 +96,6 @@ cd ../frontend
 
 * **Connect to the Backend:** In the `flask_api.py` file, replace  `'http://your_backend_url'` with the actual URL of your running Flask backend (e.g., `http://127.0.0.1:5000/`).
 
-* **Install Frontend Dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 * **Run Database Migrations:**
 
