@@ -114,11 +114,37 @@ cd ../frontend
    Your Django development server will typically run on `http://127.0.0.1:8000/`.
 
 
-## License
+## 🗒️ License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-### Attribution
+## 📝 Acknowledgements
+
+TextWave leverages the power of several open-source libraries and projects. We'd like to extend our gratitude to the developers and communities behind these fantastic tools:
+
+**Backend:**
+
+* **Flask:**  A lightweight and flexible web framework for Python. [https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)
+* **Librosa:** For audio analysis and feature extraction. [https://librosa.org/](https://librosa.org/)
+* **NumPy:** The fundamental package for scientific computing with Python. [https://numpy.org/](https://numpy.org/)
+* **Redis:**  An open-source, in-memory data structure store. [https://redis.io/](https://redis.io/)
+* **SoundFile:** For reading and writing audio files. [https://pysoundfile.readthedocs.io/en/latest/](https://pysoundfile.readthedocs.io/en/latest/)
+* **PyTorch:** An open-source machine learning framework. [https://pytorch.org/](https://pytorch.org/)
+* **Transformers:** Provides pre-trained models for Natural Language Processing tasks. [https://huggingface.co/transformers/](https://huggingface.co/transformers/)
+* **python-dotenv:** Loads environment variables from `.env` files. [https://github.com/theskia/python-dotenv](https://github.com/theskia/python-dotenv)
+* **SentencePiece:** For subword tokenization. [https://github.com/google/sentencepiece](https://github.com/google/sentencepiece)
+* **SacreMoses:** Provides tools for text processing in NLP. [https://github.com/alvations/sacremoses](https://github.com/alvations/sacremoses)
+* **MeloTTS:** A multi-speaker English text-to-speech model. [https://github.com/myshell-ai/MeloTTS](https://github.com/myshell-ai/MeloTTS) 
+* **MyShell-OpenVoice:** An open-source text-to-speech voice for research. [https://github.com/myshell-ai/OpenVoice](https://github.com/myshell-ai/OpenVoice) 
+
+**Frontend:**
+
+* **Django:** A high-level Python web framework. [https://www.djangoproject.com/](https://www.djangoproject.com/)
+* **django-cors-headers:**  A Django app that adds CORS (Cross-Origin Resource Sharing) headers to responses. [https://github.com/adamchainz/django-cors-headers](https://github.com/adamchainz/django-cors-headers)
+* **mysqlclient:** A Python interface for accessing MySQL databases. [https://github.com/PyMySQL/mysqlclient-python](https://github.com/PyMySQL/mysqlclient-python)
+
+
+### 🫶 Attribution
 
 When using this project, please attribute the original author as follows:
 
