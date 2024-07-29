@@ -113,3 +113,15 @@ cd ../frontend
 
    Your Django development server will typically run on `http://127.0.0.1:8000/`.
 
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+### Attribution
+
+When using this project, please attribute the original author as follows:
+
+```text
+This project includes code from [TextWave](https://github.com/Afnanksalal/TextWave/) by Afnan, licensed under the MIT License.
+```
