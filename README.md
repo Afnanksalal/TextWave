@@ -135,7 +135,8 @@ TextWave leverages the power of several open-source libraries and projects. We'd
 * **SentencePiece:** For subword tokenization. [https://github.com/google/sentencepiece](https://github.com/google/sentencepiece)
 * **SacreMoses:** Provides tools for text processing in NLP. [https://github.com/alvations/sacremoses](https://github.com/alvations/sacremoses)
 * **MeloTTS:** A multi-speaker English text-to-speech model. [https://github.com/myshell-ai/MeloTTS](https://github.com/myshell-ai/MeloTTS) 
-* **MyShell-OpenVoice:** An open-source text-to-speech voice for research. [https://github.com/myshell-ai/OpenVoice](https://github.com/myshell-ai/OpenVoice) 
+* **MyShell-OpenVoice:** An open-source text-to-speech voice for research. [https://github.com/myshell-ai/OpenVoice](https://github.com/myshell-ai/OpenVoice)
+* **Helsinki-NLP/opus-mt:** A collection of pre-trained machine translation models. [https://huggingface.co/Helsinki-NLP/opus-mt](https://huggingface.co/Helsinki-NLP/opus-mt) 
 
 **Frontend:**
 
