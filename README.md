@@ -150,5 +150,5 @@ TextWave leverages the power of several open-source libraries and projects. We'd
 When using this project, please attribute the original author as follows:
 
 ```text
-This project includes code from [TextWave](https://github.com/Afnanksalal/TextWave/) by Afnan, licensed under the MIT License.
+This project includes code from [TextWave](https://github.com/Afnanksalal/TextWave/) by Afnan K Salal, licensed under the MIT License.
 ```
