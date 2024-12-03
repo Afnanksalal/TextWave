@@ -78,7 +78,7 @@ cd ../frontend
 
 * **Install Required Packages:**
    ```bash
-   pip install django django-cors-headers mysqlclient 
+   pip install django django-cors-headers mysqlclient djangorestframework
    ```
 * **Database Settings:** Open the `settings.py` file.  Within the `DATABASES` dictionary, update the settings for the 'default' connection to match your MySQL credentials:
 
