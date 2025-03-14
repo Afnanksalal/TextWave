@@ -57,7 +57,7 @@ cd textwave/backend
    python -m unidic download
    ``` 
 * **Download OpenVoice Checkpoint:**  
-   - Download the checkpoint file from: [https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip](https://myshell-public-repo-hosting.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip)
+   - Download the checkpoint file from: [https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_1226.zip](https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_1226.zip)
    - Extract the contents and place the `checkpoint` directory in the root of your `backend` folder.
 
 * **Launch the Backend:**
